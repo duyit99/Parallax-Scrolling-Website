@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Scrolling Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Logo</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#sec">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <section>
+    <img src="./images/stars.png" alt="" id="star">
+    <img src="./images/moon.png" alt="" id="moon">
+    <img src="./images/mountains_behind.png" alt="" id="mountain-behind">
+   <h2 id="text">Moon Light</h2>
+   <a href="#" id="btn">Explore</a>
+    <img src="./images/mountains_front.png" alt="" id="mountain-front">
+  </section>
+  <div class="sec" id="sec">
+    <h2>Parallax Scrolling Effect</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium iusto quae quas quisquam aliquam maiores non ullam, ratione similique quis ipsa dolor in voluptatibus quasi itaque ea, quaerat ex error excepturi obcaecati, expedita corrupti explicabo? Id sit, maiores repellat, nesciunt doloribus quos aperiam natus, distinctio provident ipsam necessitatibus pariatur aliquam!
+      <br><br>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet fugit, facilis ut similique dolore alias? A maxime, laboriosam tempora assumenda distinctio enim dolores corrupti saepe doloribus doloremque laborum, repellendus ex est. Ipsam rem doloremque consequuntur repellat, animi ratione qui. Iusto labore nulla omnis voluptas eum reprehenderit placeat, recusandae non veritatis unde asperiores autem nihil accusamus, quasi, doloribus maxime dolores! Accusantium sit reprehenderit, laborum voluptas voluptate soluta magni necessitatibus, quod odit, velit ea incidunt fuga exercitationem quae. Amet pariatur ullam vero accusamus temporibus repellat enim ipsam, tenetur numquam vitae provident culpa placeat nihil voluptate aliquam et accusantium nobis dignissimos nesciunt sapiente!
+
+    </p>
+  </div>
+  <script>
+    let star = document.getElementById("star")
+    let moon = document.getElementById("moon")
+    let mountain_behind = document.getElementById("mountain-behind")
+    let mountain_front = document.getElementById("mountain-front")
+    let text = document.getElementById("text")
+    let btn = document.getElementById("text")
+    let header = document.querySelector("header")
+
+    window.addEventListener("scroll", function(){
+      let velue = window.scrollY;
+      star.style.left = velue * 0.25 + 'px';
+      moon.style.top = velue * 1.05 + 'px';
+      mountain_behind.style.top = velue * 0.5 +'px'
+      mountain_front.style.top = velue * 0 +'px'
+      text.style.marginRight = velue * 3 + 'px'
+      text.style.marginTop = velue * 1.2 + 'px'
+      btn.style.marginTop = velue * 1.5 + 'px'
+      header.style.top = velue * 0.5 + 'px'
+    })
+  </script>
+</body>
+</html>
